@@ -48,6 +48,7 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" aria-labelledby="hero-titulo">
+      <img src="assets/colagens/entonces_flor_rosa.png" alt="" class="corner-collage corner-flor" aria-hidden="true">
       <div class="container hero-inner">
         <div>
           <p class="eyebrow">Laboratório criativo</p>
@@ -200,6 +201,7 @@
 
     <!-- ============ CTA FINAL ============ -->
     <section class="cta-final" aria-labelledby="cta-titulo">
+      <img src="assets/colagens/entonces_pato_tv.png" alt="" class="corner-collage corner-pato" aria-hidden="true">
       <span class="deco-circle c1" aria-hidden="true"></span>
       <span class="deco-circle c2" aria-hidden="true"></span>
       <img src="assets/logo_entonces_01_verde.png" alt="" class="deco-logo" aria-hidden="true">

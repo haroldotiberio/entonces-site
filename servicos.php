@@ -49,7 +49,7 @@
     <!-- ============ HERO COMPACTO ============ -->
     <section class="page-hero" aria-labelledby="pag-titulo">
       <span class="deco d1" aria-hidden="true"></span>
-      <img src="assets/collage_megafone.png" alt="" class="collage-megafone" aria-hidden="true">
+      <img src="assets/colagens/entonces_megafone.png" alt="" class="collage-megafone" aria-hidden="true">
       <div class="container">
         <p class="eyebrow">Serviços</p>
         <h1 id="pag-titulo">O que sai do nosso laboratório</h1>

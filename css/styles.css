@@ -76,6 +76,7 @@ body {
   line-height: 1.65;
   color: var(--preto);
   background: var(--branco);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -592,6 +593,43 @@ input, textarea { font: inherit; }
   transform: translateY(-50%) rotate(4deg);
   width: clamp(150px, 17vw, 230px);
   box-shadow: var(--shadow-lg);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Colagens decorativas de canto — recortes do Orc_Padrao_001 (fundo removido).
+   Puramente decorativas: pointer-events none, aria-hidden nas imagens.
+   Posições escolhidas para NÃO tocar em textos (cantos livres das seções). */
+.corner-collage {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  opacity: .92;
+}
+/* Flor — canto inferior direito do hero (home): fundo escuro, acentos amarelos */
+.corner-flor {
+  right: 8px;
+  bottom: 20px;
+  width: clamp(110px, 10vw, 140px);
+  transform: rotate(-5deg);
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .22));
+}
+
+.corner-pato {
+  top: 12px;
+  left: 22px;
+  width: clamp(120px, 11vw, 150px);
+  transform: rotate(3deg);
+  filter: drop-shadow(0 8px 14px rgba(18, 16, 20, .18));
+}
+/* Mão+smart — canto superior direito da seção Contato (contato.php) */
+.corner-mao {
+  top: 10px;
+  right: 12px;
+  width: clamp(85px, 7.5vw, 105px);
+  transform: rotate(-4deg);
+  filter: drop-shadow(0 8px 14px rgba(42, 18, 64, .16));
 }
 
 /* ---------- Página Serviços: passos ---------- */
@@ -787,6 +825,7 @@ input, textarea { font: inherit; }
   .servicos-grid { grid-template-columns: repeat(2, 1fr); }
   .clientes-grid { grid-template-columns: repeat(2, 1fr); }
   .page-hero .collage-megafone { display: none; }
+  .corner-collage { display: none; } /* colagens de canto: decorativas desktop */
   .pilares { grid-template-columns: repeat(2, 1fr); }
   .passos { grid-template-columns: 1fr; gap: var(--space-7); }
   .hero-actions .btn { width: 100%; }

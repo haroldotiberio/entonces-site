@@ -110,6 +110,7 @@ function e($v) { return htmlspecialchars($v, ENT_QUOTES, 'UTF-8'); }
         <h1 id="pag-titulo">Vamos começar um experimento?</h1>
         <p>Conte o seu objetivo — a gente prepara a fórmula certa. Atendemos Porto Alegre e todo o Brasil.</p>
       </div>
+      <img src="assets/colagens/entonces_mao_smart.png" alt="" class="corner-collage corner-mao" aria-hidden="true">
     </section>
 
     <!-- ============ CONTATO ============ -->
