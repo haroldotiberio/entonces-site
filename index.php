@@ -48,7 +48,6 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" aria-labelledby="hero-titulo">
-      <img src="assets/colagens/entonces_flor_rosa.png" alt="" class="corner-collage corner-flor" aria-hidden="true">
       <div class="container hero-inner">
         <div>
           <p class="eyebrow">Laboratório criativo</p>
@@ -61,12 +60,9 @@
           <p class="hero-note">Porto Alegre/RS · atendimento em todo o Brasil</p>
         </div>
         <div class="hero-art" aria-hidden="true">
-          <span class="tag">EXP. 001</span>
-          <span class="circle green"></span>
-          <span class="circle outline"></span>
-          <span class="line v"></span>
-          <span class="line h"></span>
-          <img src="assets/logo_entonces_01_verde.png" alt="" class="logo-block logo-hero plate">
+          <span class="hero-shape hero-diamond"></span>
+          <span class="hero-shape hero-dot"></span>
+          <img src="assets/colagens/collage_hero.webp" alt="" class="hero-collage">
         </div>
       </div>
     </section>
@@ -74,20 +70,18 @@
     <!-- ============ QUEM SOMOS ============ -->
     <section class="section section-papel" aria-labelledby="quem-somos-titulo">
       <div class="container">
-        <p class="eyebrow">Quem somos</p>
-        <h2 class="section-title" id="quem-somos-titulo">Mas afinal, quem é essa tal de Entonces LAB?</h2>
         <div class="sobre-grid">
           <div class="sobre-text">
+            <p class="eyebrow">Quem somos</p>
+            <h2 class="section-title" id="quem-somos-titulo">Mas afinal, quem é essa tal de Entonces LAB?</h2>
             <p>Somos um <strong>laboratório criativo</strong> especializado em Marketing, Design e Publicidade, com foco em Gestão de Redes Sociais e Planejamento Estratégico de Comunicação. Investigamos o que torna cada empresa, serviço ou projeto realmente relevante e transformamos esse potencial em uma comunicação clara, consistente e capaz de gerar resultados reais.</p>
             <p>Aqui, <strong>criatividade não é enfeite. É ferramenta de negócio.</strong></p>
             <p>Unimos análise, planejamento, conteúdo, design e execução para construir marcas mais fortes, redes sociais mais estratégicas e campanhas que não apenas aparecem — posicionam, conectam e movimentam o público.</p>
           </div>
           <div class="sobre-art" aria-hidden="true">
-            <div class="box"></div>
-            <img src="assets/collage_flor.png" alt="" class="collage collage-flor">
-            <span class="exp">EXP. 001 — QUEM SOMOS</span>
-            <span class="dot"></span>
-            <blockquote class="quote">"Unimos análise, planejamento, conteúdo, design e execução para construir marcas mais fortes."<span>— Entonces LAB</span></blockquote>
+            <span class="sobre-shape sobre-square"></span>
+            <span class="sobre-shape sobre-circle"></span>
+            <img src="assets/colagens/collage_quem_somos.webp" alt="" class="sobre-collage">
           </div>
         </div>
         <div class="pilares">
@@ -201,7 +195,6 @@
 
     <!-- ============ CTA FINAL ============ -->
     <section class="cta-final" aria-labelledby="cta-titulo">
-      <img src="assets/colagens/entonces_pato_tv.png" alt="" class="corner-collage corner-pato" aria-hidden="true">
       <span class="deco-circle c1" aria-hidden="true"></span>
       <span class="deco-circle c2" aria-hidden="true"></span>
       <img src="assets/logo_entonces_01_verde.png" alt="" class="deco-logo" aria-hidden="true">

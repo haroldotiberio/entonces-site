@@ -113,7 +113,8 @@
     </section>
 
     <!-- ============ PROCESSO ============ -->
-    <section class="section section-papel" aria-labelledby="processo-titulo">
+    <section class="section section-papel section-processo" aria-labelledby="processo-titulo">
+      <img src="assets/colagens/collage_processo.webp" alt="" class="corner-collage corner-processo" aria-hidden="true">
       <div class="container">
         <p class="eyebrow">Processo</p>
         <h2 class="section-title" id="processo-titulo">Nosso processo</h2>

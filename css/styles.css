@@ -165,7 +165,6 @@ input, textarea { font: inherit; }
 .logo-block { border-radius: 0; }
 .logo-header { width: clamp(120px, 9vw, 148px); }
 .logo-footer { width: clamp(130px, 10vw, 160px); }
-.logo-hero { width: clamp(180px, 22vw, 264px); }
 
 /* ---------- Header ---------- */
 .site-header {
@@ -261,44 +260,45 @@ input, textarea { font: inherit; }
   color: rgba(255, 255, 255, .78);
 }
 
-/* Colagem geométrica do hero */
-.hero-art { position: relative; min-height: 380px; }
-.hero-art .plate {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) rotate(-4deg);
-  box-shadow: var(--shadow-lg);
-  transition: transform var(--dur-base) var(--ease-out);
+/* Composição do hero (Opção C — ideia_01_home_hero.jpg):
+   candidata 04 como ilustração principal, losango lima 45° + círculo lima atrás. */
+.hero-art {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hero-art .plate:hover { transform: translate(-50%, -50%) rotate(-1deg) scale(1.02); }
-.hero-art .circle {
+.hero-shape {
   position: absolute;
-  border-radius: var(--radius-blob);
+  pointer-events: none;
+  user-select: none;
 }
-.hero-art .circle.green { width: 120px; height: 120px; background: var(--verde); top: 6%; right: 4%; }
-.hero-art .circle.outline {
-  width: 190px; height: 190px;
-  border: 3px solid rgba(255, 255, 255, .35);
-  bottom: 2%; left: 0%;
-}
-.hero-art .line {
-  position: absolute;
-  background: var(--roxo-claro);
-}
-.hero-art .line.v { width: 3px; height: 140px; top: -12%; right: 22%; transform: rotate(18deg); }
-.hero-art .line.h { height: 3px; width: 150px; bottom: 14%; right: -2%; }
-.hero-art .tag {
-  position: absolute;
-  top: 8%; left: -4%;
-  font-family: var(--font-display);
-  font-size: var(--text-micro);
-  font-weight: 700;
-  letter-spacing: .12em;
-  color: var(--preto);
+.hero-diamond {
+  width: 320px;
+  height: 320px;
   background: var(--verde);
-  padding: 6px 12px;
-  transform: rotate(-6deg);
-  box-shadow: var(--shadow-sm);
+  transform: rotate(45deg);
+  top: 50%;
+  left: 50%;
+  margin: -160px 0 0 -160px;
+  z-index: 0;
+}
+.hero-dot {
+  width: 130px;
+  height: 130px;
+  border-radius: var(--radius-blob);
+  background: var(--verde);
+  bottom: 4%;
+  right: 6%;
+  z-index: 0;
+}
+.hero-collage {
+  position: relative;
+  z-index: 1;
+  width: clamp(280px, 30vw, 380px);
+  transform: rotate(-3deg);
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .28));
 }
 
 /* ---------- Seções genéricas ---------- */
@@ -311,59 +311,54 @@ input, textarea { font: inherit; }
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: var(--space-8);
-  margin-top: var(--space-6);
   align-items: start;
 }
 .sobre-text p + p { margin-top: var(--space-4); }
 .sobre-text p { max-width: 62ch; color: var(--cinza-900); }
 .sobre-text strong { color: var(--roxo); font-weight: 700; }
+/* Eyebrow e título agora vivem dentro da coluna de texto (2 colunas completas) */
+.sobre-text .eyebrow { color: var(--roxo); }
+.sobre-text .section-title { margin-top: var(--space-2); }
 
-.sobre-art { position: relative; min-height: 300px; }
-.sobre-art .box {
-  position: absolute;
-  top: 0; left: 0;
-  width: 78%; height: 100%;
-  border: 2px solid var(--roxo);
-  transform: rotate(2deg);
+/* Arte de Quem Somos (Opção C — ideia_02_quem_somos.jpg):
+   candidata 05 protagonista, quadrado roxo sólido (topo) + círculo lima grande (base). */
+.sobre-art {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.sobre-art .exp {
+.sobre-shape {
   position: absolute;
-  right: 0; top: 8%;
+  pointer-events: none;
+  user-select: none;
+}
+.sobre-square {
+  top: 4%;
+  left: 6%;
+  width: 250px;
+  height: 250px;
   background: var(--roxo);
-  color: var(--branco);
-  font-family: var(--font-display);
-  font-size: var(--text-small);
-  font-weight: 700;
-  letter-spacing: .1em;
-  padding: 10px 14px;
-  transform: rotate(3deg);
-  box-shadow: var(--shadow-md);
+  z-index: 0;
 }
-.sobre-art .dot { position: absolute; width: 16px; height: 16px; background: var(--verde); border-radius: var(--radius-blob); bottom: 12%; left: 8%; }
-.sobre-art .quote {
-  position: absolute;
-  bottom: 0; left: 14%;
-  width: 72%;
-  background: var(--branco);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-5) var(--space-6);
-  font-weight: 500;
-  transform: rotate(-1.5deg);
-  border-inline-start: 2px solid var(--verde); /* sutil, sem side-tab grosso */
+.sobre-circle {
+  bottom: 0;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  border-radius: var(--radius-blob);
+  background: var(--verde);
+  transform: translateX(-50%);
+  z-index: 0;
 }
-.sobre-art .quote span { display: block; font-size: var(--text-small); color: var(--cinza-600); margin-top: var(--space-2); }
-
-/* Colagem floral (scrapbook) na seção Sobre */
-.sobre-art .collage-flor {
-  position: absolute;
-  top: -22px;
-  right: -10px;
-  width: 58%;
-  transform: rotate(-4deg);
-  box-shadow: var(--shadow-lg);
+.sobre-collage {
+  position: relative;
   z-index: 1;
+  width: clamp(300px, 33vw, 420px);
+  transform: rotate(0deg);
+  filter: drop-shadow(0 10px 24px rgba(42, 18, 64, .18));
 }
-.sobre-art .exp { z-index: 2; }
 
 .pilares {
   display: grid;
@@ -515,9 +510,9 @@ input, textarea { font: inherit; }
   border: 3px solid var(--preto);
   opacity: .25;
 }
-.cta-final .deco-circle.c1 { width: 200px; height: 200px; top: -60px; right: -40px; }
-.cta-final .deco-circle.c2 { width: 120px; height: 120px; bottom: -40px; left: 8%; }
-.cta-final .deco-logo { position: absolute; width: 130px; bottom: -20px; right: 10%; transform: rotate(8deg); opacity: .9; }
+.cta-final .deco-circle.c1 { width: 230px; height: 230px; top: -70px; right: -40px; }
+.cta-final .deco-circle.c2 { width: 140px; height: 140px; bottom: -46px; left: 8%; }
+.cta-final .deco-logo { position: absolute; width: 150px; bottom: -20px; right: 10%; transform: rotate(8deg); opacity: .9; }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--preto); color: var(--cinza-400); }
@@ -607,21 +602,15 @@ input, textarea { font: inherit; }
   user-select: none;
   opacity: .92;
 }
-/* Flor — canto inferior direito do hero (home): fundo escuro, acentos amarelos */
-.corner-flor {
-  right: 8px;
-  bottom: 20px;
-  width: clamp(110px, 10vw, 140px);
-  transform: rotate(-5deg);
+/* Collage mão+portal+lupa — canto superior direito da seção Processo
+   (servicos.php): valores validados no gate A/B (candidata 03) */
+.section-processo { position: relative; }
+.corner-processo {
+  top: 16px;
+  right: 12px;
+  width: clamp(130px, 14vw, 190px);
+  transform: rotate(-2deg);
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .22));
-}
-
-.corner-pato {
-  top: 12px;
-  left: 22px;
-  width: clamp(120px, 11vw, 150px);
-  transform: rotate(3deg);
-  filter: drop-shadow(0 8px 14px rgba(18, 16, 20, .18));
 }
 /* Mão+smart — canto superior direito da seção Contato (contato.php) */
 .corner-mao {
@@ -756,17 +745,18 @@ input, textarea { font: inherit; }
   .clientes-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-7); }
   .hero-inner, .sobre-grid { grid-template-columns: 1fr; }
-  .hero-art { min-height: 300px; margin-top: var(--space-6); }
+  /* 769–1024px: arte empilhada abaixo do texto com escala reduzida (Opção C) */
+  .hero-art { min-height: 400px; margin-top: var(--space-6); }
+  .hero-collage { width: clamp(240px, 34vw, 320px); }
+  .sobre-art { min-height: 480px; }
   .contato-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
   .hero { padding-block: clamp(4rem, 12vw, 6rem); }
-  .hero-art { min-height: 290px; }
-  .hero-art .circle.green { top: 2%; right: 2%; }
-  .hero-art .circle.outline { bottom: 10%; left: 4%; width: 150px; height: 150px; }
-  .hero-art .line.h { bottom: 24%; }
-  .hero-art .tag { left: 0; }
+  /* Opção C: conjunto colagem + formas oculto no mobile, sem altura reservada */
+  .hero-art { display: none; }
+  .sobre-art { display: none; }
   .cta-final .deco-logo { right: 4%; width: 104px; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-exp { justify-self: start; }
