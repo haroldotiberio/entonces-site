@@ -172,22 +172,22 @@
         <h2 class="section-title" id="clientes-titulo">Clientes</h2>
         <div class="clientes-grid">
           <figure class="cliente reveal">
-            <img src="assets/cliente_01.png" alt="Logotipo de cliente" loading="lazy">
+            <img src="assets/clientes-logo/4beer.png" alt="Logotipo 4Beer" loading="lazy">
           </figure>
           <figure class="cliente reveal" data-delay="70">
-            <img src="assets/cliente_02.png" alt="Logotipo de cliente" loading="lazy">
+            <img src="assets/clientes-logo/acerva.png" alt="Logotipo Acerva" loading="lazy">
           </figure>
           <figure class="cliente reveal" data-delay="140">
-            <img src="assets/cliente_03.png" alt="Logotipo de cliente" loading="lazy">
+            <img src="assets/clientes-logo/bentux.png" alt="Logotipo Bentux" loading="lazy">
           </figure>
           <figure class="cliente reveal" data-delay="210">
-            <img src="assets/cliente_04.png" alt="Logotipo de cliente" loading="lazy">
+            <img src="assets/clientes-logo/qualidade-corporativa.png" alt="Logotipo Qualidade Corporativa" loading="lazy">
           </figure>
           <figure class="cliente reveal">
-            <img src="assets/cliente_05.png" alt="Logotipo de cliente" loading="lazy">
+            <img src="assets/clientes-logo/sicredi.png" alt="Logotipo Sicredi" loading="lazy">
           </figure>
           <figure class="cliente reveal" data-delay="70">
-            <img src="assets/cliente_06.png" alt="Logotipo de cliente" loading="lazy">
+            <img src="assets/clientes-logo/voa.png" alt="Logotipo Voa" loading="lazy">
           </figure>
         </div>
       </div>
