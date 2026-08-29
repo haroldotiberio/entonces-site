@@ -307,12 +307,17 @@ input, textarea { font: inherit; }
 .section-white { background: var(--branco); }
 
 /* ---------- Quem somos ---------- */
+/* Ajuste cliente 29/ago: posição explícita e garantida no desktop —
+   textos à ESQUERDA (coluna "texto"), colagem+formas à DIREITA (coluna "arte"). */
 .sobre-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas: "texto arte";
   gap: var(--space-8);
   align-items: start;
 }
+.sobre-text { grid-area: texto; }
+.sobre-art { grid-area: arte; }
 .sobre-text p + p { margin-top: var(--space-4); }
 .sobre-text p { max-width: 62ch; color: var(--cinza-900); }
 .sobre-text strong { color: var(--roxo); font-weight: 700; }
@@ -416,6 +421,7 @@ input, textarea { font: inherit; }
     transform var(--dur-fast) var(--ease-out),
     box-shadow var(--dur-fast) var(--ease-out),
     background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
     border-color var(--dur-fast) var(--ease-out);
 }
 .servico-card:hover {
@@ -445,7 +451,17 @@ input, textarea { font: inherit; }
 .servico-card.featured { background: var(--verde); border-color: var(--verde); color: var(--preto); }
 .servico-card.featured .num { color: var(--roxo-escuro); }
 .servico-card.featured p { color: rgba(18, 16, 20, .75); }
-.servico-card.featured:hover { border-color: var(--verde-escuro); box-shadow: var(--shadow-md); }
+/* Ajuste cliente 29/ago: card 01 mantém fundo verde por padrão, mas no hover o
+   fundo TROCA para roxo (--roxo #53277B) com texto branco (AA 7.5:1). O quadradinho
+   verde do .num permanece (decorativo, contraste ok sobre roxo). */
+.servico-card.featured:hover {
+  background: var(--roxo);
+  border-color: var(--roxo);
+  color: var(--branco);
+  box-shadow: var(--shadow-md);
+}
+.servico-card.featured:hover .num { color: var(--verde); }
+.servico-card.featured:hover p { color: rgba(255, 255, 255, .85); }
 
 /* ---------- Clientes (logotipos) ---------- */
 .clientes-grid {
@@ -602,15 +618,53 @@ input, textarea { font: inherit; }
   user-select: none;
   opacity: .92;
 }
-/* Collage mão+portal+lupa — canto superior direito da seção Processo
-   (servicos.php): valores validados no gate A/B (candidata 03) */
-.section-processo { position: relative; }
-.corner-processo {
-  top: 16px;
-  right: 12px;
-  width: clamp(130px, 14vw, 190px);
+/* Processo (servicos.php) — ajuste cliente 29/ago: colagem integrada ao bloco,
+   grid 2 colunas (texto esquerda, figura direita DENTRO do container), mesmo
+   vocabulário visual da seção Quem Somos (formas geométricas atrás, roxo/verde),
+   sem corte na borda da viewport. A classe .corner-collage/.corner-processo
+   (absolute ancorado na viewport) foi substituída por este grid. */
+.processo-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+.processo-art {
+  position: relative;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.processo-art .processo-shape {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+.processo-square {
+  top: 6%;
+  right: 6%;
+  width: 190px;
+  height: 190px;
+  background: var(--roxo);
+  z-index: 0;
+}
+.processo-circle {
+  bottom: 0;
+  left: 6%;
+  width: 250px;
+  height: 250px;
+  border-radius: var(--radius-blob);
+  background: var(--verde);
+  z-index: 0;
+}
+.processo-collage {
+  position: relative;
+  z-index: 1;
+  width: clamp(280px, 30vw, 400px);
+  max-width: 100%;
   transform: rotate(-2deg);
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .22));
+  filter: drop-shadow(0 10px 24px rgba(42, 18, 64, .18));
 }
 /* Mão+smart — canto superior direito da seção Contato (contato.php) */
 .corner-mao {
@@ -745,10 +799,13 @@ input, textarea { font: inherit; }
   .clientes-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-7); }
   .hero-inner, .sobre-grid { grid-template-columns: 1fr; }
+  .sobre-grid { grid-template-areas: "texto" "arte"; }
   /* 769–1024px: arte empilhada abaixo do texto com escala reduzida (Opção C) */
   .hero-art { min-height: 400px; margin-top: var(--space-6); }
   .hero-collage { width: clamp(240px, 34vw, 320px); }
   .sobre-art { min-height: 480px; }
+  .processo-grid { grid-template-columns: 1fr; }
+  .processo-art { min-height: 400px; margin-top: var(--space-6); }
   .contato-grid { grid-template-columns: 1fr; }
 }
 
@@ -756,7 +813,7 @@ input, textarea { font: inherit; }
   .hero { padding-block: clamp(4rem, 12vw, 6rem); }
   /* Opção C: conjunto colagem + formas oculto no mobile, sem altura reservada */
   .hero-art { display: none; }
-  .sobre-art { display: none; }
+  .sobre-art, .processo-art { display: none; }
   .cta-final .deco-logo { right: 4%; width: 104px; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-exp { justify-self: start; }

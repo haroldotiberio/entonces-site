@@ -114,11 +114,17 @@
 
     <!-- ============ PROCESSO ============ -->
     <section class="section section-papel section-processo" aria-labelledby="processo-titulo">
-      <img src="assets/colagens/collage_processo.webp" alt="" class="corner-collage corner-processo" aria-hidden="true">
-      <div class="container">
-        <p class="eyebrow">Processo</p>
-        <h2 class="section-title" id="processo-titulo">Nosso processo</h2>
-        <p class="processo-lead">Nosso processo foi pensado para tornar o marketing mais simples para o cliente. Organizamos o fluxo, antecipamos demandas, conduzimos cada etapa e reduzimos ao máximo a necessidade de envolvimento operacional da sua equipe. Você compartilha conosco a essência do negócio. Nós transformamos isso em ideias, soluções e resultados assertivos.</p>
+      <div class="container processo-grid">
+        <div class="processo-text">
+          <p class="eyebrow">Processo</p>
+          <h2 class="section-title" id="processo-titulo">Nosso processo</h2>
+          <p class="processo-lead">Nosso processo foi pensado para tornar o marketing mais simples para o cliente. Organizamos o fluxo, antecipamos demandas, conduzimos cada etapa e reduzimos ao máximo a necessidade de envolvimento operacional da sua equipe. Você compartilha conosco a essência do negócio. Nós transformamos isso em ideias, soluções e resultados assertivos.</p>
+        </div>
+        <div class="processo-art" aria-hidden="true">
+          <span class="processo-shape processo-square"></span>
+          <span class="processo-shape processo-circle"></span>
+          <img src="assets/colagens/collage_processo.webp" alt="" class="processo-collage">
+        </div>
       </div>
     </section>
 
